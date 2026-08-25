@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -34,10 +31,11 @@ export default {
         accent: {
           teal: "#0D9488",
           lime: "#84CC16",
-        }
+        },
       },
       fontFamily: {
         sans: [
+          "Elms Sans",
           "Outfit",
           "Inter",
           "system-ui",
@@ -45,25 +43,25 @@ export default {
           "BlinkMacSystemFont",
           "Segoe UI",
           "Roboto",
-          "sans-serif"
+          "sans-serif",
         ],
         bellagia: ["Bellagia", "Playfair Display", "Georgia", "serif"],
         azonix: ["Azonix", "system-ui", "sans-serif"],
-        gebril: ["Gebril", "Garamond", "Georgia", "serif"],
+        gerbil: ["Gerbil", "Garamond", "Georgia", "serif"],
       },
       spacing: {
-        '4.5': '1.125rem',
+        4.5: "1.125rem",
       },
       animation: {
-        'infinite-scroll': 'infinite-scroll 40s linear infinite',
+        "infinite-scroll": "infinite-scroll 40s linear infinite",
       },
       keyframes: {
-        'infinite-scroll': {
-          from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(-50%)' },
-        }
-      }
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+      },
     },
   },
   plugins: [],
-}
+};

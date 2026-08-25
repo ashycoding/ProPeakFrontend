@@ -50,7 +50,7 @@ export const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 bg-[#F0FDF8]">
+    <section className="hero-section relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 bg-[#F0FDF8]">
       {/* Background Animated Gradient Blobs */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-[#15D69C]/15 via-[#7FFFD4]/20 to-[#0D7A58]/10 rounded-full blur-[120px] pointer-events-none -z-10" />
       <div className="absolute top-40 right-10 w-96 h-96 bg-[#84CC16]/10 rounded-full blur-[100px] pointer-events-none -z-10" />
@@ -74,25 +74,25 @@ export const Hero: React.FC = () => {
             className="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left"
           >
             {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#D1FAE5] shadow-xs text-xs sm:text-sm font-semibold text-[#0D7A58]">
+            <div className="font-elms-sans inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#D1FAE5] shadow-xs text-xs sm:text-sm font-semibold text-[#0D7A58]">
               <Sparkles className="w-4 h-4 text-[#10A87A]" />
-              <span>Student-Driven Digital Services & Managed Network</span>
+              <span>Talent-Forward Digital Services & Managed Network</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#052E20] tracking-tight leading-[1.1]">
-              Build Skills.
+            <h1 className="font-gerbil font-medium text-3xl sm:text-6xl lg:text-7xl text-[#052E20] tracking-tight leading-[1.3]">
+              High-Performance Digital Solutions
               <br />
-              <span className="text-grad-bright">Earn Money.</span>
-              <br />
-              Create Impact.
+              <span className="text-grad-bright">
+                Delivered by Vetted Talent,
+              </span>
             </h1>
 
             {/* Supporting Subheadline */}
-            <p className="text-lg sm:text-xl text-[#527A68] leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
-              Digital solutions built by ambitious talent, managed by a team
-              that cares about the outcome. From high-performance websites and
-              AI pipelines to video editing and technical content.
+            <p className="font-elms-sans text-lg sm:text-xl text-[#527A68] leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
+              Get enterprise-grade Web Apps, AI Pipelines, and Video Production
+              backed by a dedicated project management team that guarantees
+              delivery.
             </p>
 
             {/* Action Buttons */}
@@ -101,7 +101,7 @@ export const Hero: React.FC = () => {
                 to="/start-project"
                 className="w-full sm:w-auto px-8 py-4 text-base font-bold rounded-xl bg-[#0A4F3A] hover:bg-[#0D7A58] text-white shadow-lg shadow-[#0A4F3A]/20 active:scale-98 transition-all duration-200 flex items-center justify-center gap-2 group"
               >
-                <span>Start a Project</span>
+                <span className="font-gerbil font-light">Start a Project</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
 
@@ -109,7 +109,7 @@ export const Hero: React.FC = () => {
                 to="/services"
                 className="w-full sm:w-auto px-7 py-4 text-base font-semibold rounded-xl bg-white hover:bg-[#F7FEE7] border border-[#D1FAE5] text-[#052E20] shadow-xs active:scale-98 transition-all duration-200 flex items-center justify-center gap-2"
               >
-                <span>Explore Services</span>
+                <span className="font-gerbil font-light">Explore Services</span>
                 <ChevronRight className="w-4 h-4 text-[#10A87A]" />
               </Link>
             </div>
