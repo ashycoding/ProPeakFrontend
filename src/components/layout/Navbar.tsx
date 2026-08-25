@@ -1,47 +1,47 @@
-import React, { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ArrowRight, Mail, Sparkles } from 'lucide-react'
-import { siteConfig } from '@/config/site'
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, ArrowRight, Mail, Sparkles } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 export const Navbar: React.FC = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const location = useLocation()
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   // Track scroll position to enhance frosted glass effect
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
-        setIsScrolled(true)
+        setIsScrolled(true);
       } else {
-        setIsScrolled(false)
+        setIsScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Close mobile drawer when route changes
   useEffect(() => {
-    setIsMobileMenuOpen(false)
-  }, [location.pathname])
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
 
   const navItems = [
-    { name: 'Services', path: '/services' },
-    { name: 'How It Works', path: '/#how-it-works' },
-    { name: 'Our Work', path: '/#showcase' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
-  ]
+    { name: "Services", path: "/services" },
+    { name: "How It Works", path: "/#how-it-works" },
+    { name: "Our Work", path: "/#showcase" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
+  ];
 
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? 'glass-navbar shadow-sm shadow-brand-950/5 py-2.5'
-          : 'bg-[#F0FDF8]/90 backdrop-blur-md py-3.5 border-b border-border-theme/60'
+          ? "glass-navbar shadow-sm shadow-brand-950/5 py-2.5"
+          : "bg-[#F0FDF8]/90 backdrop-blur-md py-3.5 border-b border-border-theme/60"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,25 +55,37 @@ export const Navbar: React.FC = () => {
             <img
               src="/assets/logo/logo.png"
               alt="ProPeak Logo"
-              className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-200 hover:scale-105"
+              className="h-14 sm:h-10 md:h-14  w-auto object-contain transition-transform duration-200 hover:scale-105"
               onError={(e) => {
-                const target = e.target as HTMLElement
-                target.style.display = 'none'
-                const fallback = document.getElementById('navbar-logo-fallback')
-                if (fallback) fallback.style.display = 'flex'
+                const target = e.target as HTMLElement;
+                target.style.display = "none";
+                const fallback = document.getElementById(
+                  "navbar-logo-fallback",
+                );
+                if (fallback) fallback.style.display = "flex";
               }}
             />
-            <div id="navbar-logo-fallback" className="hidden items-center gap-1.5 font-bold text-2xl tracking-tight text-brand-950">
-              <span className="w-8 h-8 rounded-lg bg-brand-800 text-white flex items-center justify-center text-lg font-black">P</span>
-              <span>Pro<span className="text-brand-600">Peak</span></span>
+            <div
+              id="navbar-logo-fallback"
+              className="hidden items-center gap-1.5 font-bold text-2xl tracking-tight text-brand-950"
+            >
+              <span className="w-8 h-8 rounded-lg bg-brand-800 text-white flex items-center justify-center text-lg font-black">
+                P
+              </span>
+              <span>
+                Pro<span className="text-brand-600">Peak</span>
+              </span>
             </div>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2" aria-label="Main Navigation">
+          <nav
+            className="hidden md:flex items-center space-x-1 lg:space-x-2"
+            aria-label="Main Navigation"
+          >
             {navItems.map((item) => {
-              const isAnchor = item.path.includes('#')
-              const isActive = !isAnchor && location.pathname === item.path
+              const isAnchor = item.path.includes("#");
+              const isActive = !isAnchor && location.pathname === item.path;
 
               return isAnchor ? (
                 <a
@@ -89,13 +101,13 @@ export const Navbar: React.FC = () => {
                   to={item.path}
                   className={`px-3.5 py-2 text-base font-semibold rounded-lg transition-colors duration-200 ${
                     isActive
-                      ? 'text-brand-950 bg-brand-200/40 font-bold'
-                      : 'text-text-secondary hover:text-brand-950 hover:bg-brand-200/30'
+                      ? "text-brand-950 bg-brand-200/40 font-bold"
+                      : "text-text-secondary hover:text-brand-950 hover:bg-brand-200/30"
                   }`}
                 >
                   {item.name}
                 </Link>
-              )
+              );
             })}
           </nav>
 
@@ -133,7 +145,11 @@ export const Navbar: React.FC = () => {
               aria-label="Toggle navigation menu"
               aria-expanded={isMobileMenuOpen}
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -158,13 +174,13 @@ export const Navbar: React.FC = () => {
               initial={{ opacity: 0, y: -15 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.25, ease: 'easeOut' }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
               className="relative z-50 md:hidden bg-bg-card border-b border-border-theme px-6 py-6 space-y-4 shadow-xl"
             >
               <div className="flex flex-col space-y-1">
                 {navItems.map((item) => {
-                  const isAnchor = item.path.includes('#')
-                  const isActive = !isAnchor && location.pathname === item.path
+                  const isAnchor = item.path.includes("#");
+                  const isActive = !isAnchor && location.pathname === item.path;
 
                   return isAnchor ? (
                     <a
@@ -182,13 +198,13 @@ export const Navbar: React.FC = () => {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={`px-4 py-3 text-lg font-semibold rounded-xl transition-colors ${
                         isActive
-                          ? 'text-brand-950 bg-brand-200/50 font-bold'
-                          : 'text-text-primary hover:bg-bg-page'
+                          ? "text-brand-950 bg-brand-200/50 font-bold"
+                          : "text-text-primary hover:bg-bg-page"
                       }`}
                     >
                       {item.name}
                     </Link>
-                  )
+                  );
                 })}
               </div>
 
@@ -215,7 +231,7 @@ export const Navbar: React.FC = () => {
         )}
       </AnimatePresence>
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

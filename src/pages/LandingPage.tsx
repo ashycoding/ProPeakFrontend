@@ -44,7 +44,7 @@ export const LandingPage: React.FC = () => {
         <TechStack />
 
         {/* 8. Meet The Builders (Founders & Leadership) */}
-        <FoundersSection />
+        {/* <FoundersSection /> */}
 
         {/* 9. Sample Outcomes & Client Feedback */}
         <SampleOutcomes />
