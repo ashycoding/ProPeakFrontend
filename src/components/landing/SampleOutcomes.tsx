@@ -1,46 +1,53 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Sparkles, Star, Quote, CheckCircle2 } from 'lucide-react'
+import React from "react";
+import { motion } from "framer-motion";
+import { Sparkles, Star, Quote, CheckCircle2 } from "lucide-react";
 
 export const SampleOutcomes: React.FC = () => {
   const sampleCaseStudies = [
     {
-      title: 'Fast-Loaded SaaS Landing & Architecture',
-      category: 'Web Development',
-      deliverable: 'Modular Next.js component system, Tailwind responsive design, and SEO metadata configuration.',
-      highlight: 'Delivered in 8 days with 98+ PageSpeed and clean TypeScript structure.',
+      title: "Fast-Loaded SaaS Landing & Architecture",
+      category: "Web Development",
+      deliverable:
+        "Modular Next.js component system, Tailwind responsive design, and SEO metadata configuration.",
+      highlight:
+        "Delivered in 8 days with 98+ PageSpeed and clean TypeScript structure.",
     },
     {
-      title: 'Custom Technical Documentation Suite',
-      category: 'Content Writing',
-      deliverable: 'Complete developer onboarding guides, code samples, API endpoint references, and search-friendly docs.',
-      highlight: 'Clear, structured documentation ready for developer ingestion.',
+      title: "Custom Technical Documentation Suite",
+      category: "Content Writing",
+      deliverable:
+        "Complete developer onboarding guides, code samples, API endpoint references, and search-friendly docs.",
+      highlight:
+        "Clear, structured documentation ready for developer ingestion.",
     },
     {
-      title: 'RAG Knowledge Base & Query Engine',
-      category: 'AI / Machine Learning',
-      deliverable: 'Embeddings pipeline, vector store indexing, and conversational interface for internal company manuals.',
-      highlight: 'Accurate citation retrieval with customizable prompt boundaries.',
+      title: "RAG Knowledge Base & Query Engine",
+      category: "AI / Machine Learning",
+      deliverable:
+        "Embeddings pipeline, vector store indexing, and conversational interface for internal company manuals.",
+      highlight:
+        "Accurate citation retrieval with customizable prompt boundaries.",
     },
-  ]
+  ];
 
   const sampleFeedback = [
     {
-      quote: "The ProPeak team delivered our frontend components with great attention to detail and responsiveness. Code was clean, modular, and easy to maintain.",
+      quote:
+        "The ProPeak team delivered our frontend components with great attention to detail and responsiveness. Code was clean, modular, and easy to maintain.",
       author: "Early Stage Startup Founder",
       role: "Web & AI Project Client",
     },
     {
-      quote: "Getting our capstone architecture reviewed by ProPeak gave us the confidence and technical clarity to complete our prototype ahead of schedule.",
+      quote:
+        "Getting our capstone architecture reviewed by ProPeak gave us the confidence and technical clarity to complete our prototype ahead of schedule.",
       author: "Final Year Engineering Student",
       role: "Technical Mentorship Candidate",
     },
-  ]
+  ];
 
   return (
     <section className="py-20 lg:py-28 bg-[#F0FDF8] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#D1FAE5] shadow-xs text-xs sm:text-sm font-bold text-[#0D7A58] uppercase tracking-wider">
@@ -48,12 +55,13 @@ export const SampleOutcomes: React.FC = () => {
             <span>Demonstrated Quality</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#052E20] tracking-tight">
+          <h2 className="font-gerbil font-light text-3xl sm:text-5xl text-[#052E20] tracking-tight">
             Sample Outcomes & Client Experiences
           </h2>
 
           <p className="text-base sm:text-lg text-[#527A68]">
-            Here is what typical project execution and client collaborations look like with the ProPeak managed network.
+            Here is what typical project execution and client collaborations
+            look like with the ProPeak managed network.
           </p>
         </div>
 
@@ -112,8 +120,12 @@ export const SampleOutcomes: React.FC = () => {
 
               <div className="pt-4 border-t border-[#D1FAE5]/60 flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-bold text-[#052E20]">{item.author}</p>
-                  <p className="text-xs text-[#527A68] font-medium">{item.role}</p>
+                  <p className="text-sm font-bold text-[#052E20]">
+                    {item.author}
+                  </p>
+                  <p className="text-xs text-[#527A68] font-medium">
+                    {item.role}
+                  </p>
                 </div>
                 <span className="text-[11px] font-semibold text-[#0D7A58] bg-[#F0FDF8] px-2 py-1 rounded-md border border-[#D1FAE5]">
                   Sample Feedback
@@ -122,10 +134,9 @@ export const SampleOutcomes: React.FC = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default SampleOutcomes
+export default SampleOutcomes;

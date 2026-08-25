@@ -44,7 +44,7 @@ export const Navbar: React.FC = () => {
           : "bg-[#F0FDF8]/90 backdrop-blur-md py-3.5 border-b border-border-theme/60"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
@@ -80,7 +80,7 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Navigation Links */}
           <nav
-            className="hidden md:flex items-center space-x-1 lg:space-x-2"
+            className="font-elms-sans font-light font-large hidden md:flex items-center space-x-1 lg:space-x-2"
             aria-label="Main Navigation"
           >
             {navItems.map((item) => {
@@ -126,7 +126,7 @@ export const Navbar: React.FC = () => {
               to="/start-project"
               className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold rounded-xl bg-brand-800 hover:bg-brand-950 text-white shadow-md shadow-brand-950/10 hover:shadow-lg transition-all duration-200 group active:scale-95"
             >
-              <span>Start a Project</span>
+              <span className="font-gerbil font-light">Start a Project</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>

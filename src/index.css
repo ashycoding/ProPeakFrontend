@@ -1,4 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "Gerbil";
+  src: url("./fonts/gerbil.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Elms Sans";
+  src: url("./fonts/Elms_Sans/ElmsSans-VariableFont_wght.ttf")
+    format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+.font-gerbil {
+  font-family: "Gerbil", "Garamond", "Georgia", serif;
+}
+
+.font-elms-sans {
+  font-family: "Elms Sans", "Outfit", "Inter", sans-serif;
+}
+
+button:not(header button):not(.hero-section button, #faq button),
+a[class*="px-"][class*="py-"]:not(header a):not(.hero-section a) {
+  font-family: "Gerbil", "Garamond", "Georgia", serif;
+  font-weight: 600;
+}
 
 @tailwind base;
 @tailwind components;
@@ -6,19 +35,19 @@
 
 @layer base {
   :root {
-    --brand-950: #0A4F3A;
-    --brand-800: #0D7A58;
-    --brand-600: #10A87A;
-    --brand-400: #15D69C;
-    --brand-200: #7FFFD4;
-    --bg-page: #F0FDF8;
-    --bg-card: #FFFFFF;
-    --border-theme: #D1FAE5;
-    --badge-bg: #F7FEE7;
-    --text-primary: #052E20;
-    --text-secondary: #527A68;
-    --accent-teal: #0D9488;
-    --accent-lime: #84CC16;
+    --brand-950: #0a4f3a;
+    --brand-800: #0d7a58;
+    --brand-600: #10a87a;
+    --brand-400: #15d69c;
+    --brand-200: #7fffd4;
+    --bg-page: #f0fdf8;
+    --bg-card: #ffffff;
+    --border-theme: #d1fae5;
+    --badge-bg: #f7fee7;
+    --text-primary: #052e20;
+    --text-secondary: #527a68;
+    --accent-teal: #0d9488;
+    --accent-lime: #84cc16;
     --accent-lime-text: #166534;
   }
 
@@ -27,9 +56,15 @@
   }
 
   body {
-    background-color: #F0FDF8;
-    color: #052E20;
-    font-family: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #f0fdf8;
+    color: #052e20;
+    font-family:
+      "Elms Sans",
+      "Outfit",
+      "Inter",
+      system-ui,
+      -apple-system,
+      sans-serif;
     overflow-x: hidden;
     min-height: 100vh;
   }
@@ -40,43 +75,49 @@
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #F0FDF8;
+    background: #f0fdf8;
   }
   ::-webkit-scrollbar-thumb {
-    background: #D1FAE5;
+    background: #d1fae5;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #10A87A;
+    background: #10a87a;
   }
 }
 
 /* Gradients specified in design system */
 .grad-bright {
-  background: linear-gradient(135deg, #0D7A58 0%, #15D69C 100%);
+  background: linear-gradient(135deg, #0d7a58 0%, #15d69c 100%);
 }
 
 .grad-main {
-  background: linear-gradient(135deg, #0A4F3A 0%, #0D9488 50%, #10A87A 100%);
+  background: linear-gradient(135deg, #0a4f3a 0%, #0d9488 50%, #10a87a 100%);
 }
 
 .grad-glow {
-  background: linear-gradient(135deg, #0A4F3A 0%, #065F46 30%, #0D9488 70%, #06B6D4 100%);
+  background: linear-gradient(
+    135deg,
+    #0a4f3a 0%,
+    #065f46 30%,
+    #0d9488 70%,
+    #06b6d4 100%
+  );
 }
 
 .grad-lime {
-  background: linear-gradient(135deg, #16A34A 0%, #84CC16 100%);
+  background: linear-gradient(135deg, #16a34a 0%, #84cc16 100%);
 }
 
 /* Text Gradients */
 .text-grad-bright {
-  background: linear-gradient(135deg, #0D7A58 0%, #15D69C 100%);
+  background: linear-gradient(135deg, #0d7a58 0%, #15d69c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-grad-glow {
-  background: linear-gradient(135deg, #15D69C 0%, #7FFFD4 50%, #84CC16 100%);
+  background: linear-gradient(135deg, #15d69c 0%, #7fffd4 50%, #84cc16 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -105,7 +146,10 @@
 
 /* Hover Elevation Utility */
 .hover-elevate {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease;
 }
 
 .hover-elevate:hover {
@@ -116,9 +160,9 @@
 
 /* Form input fields */
 .input-field {
-  background-color: #FFFFFF;
-  border: 1px solid #D1FAE5;
-  color: #052E20;
+  background-color: #ffffff;
+  border: 1px solid #d1fae5;
+  color: #052e20;
   border-radius: 10px;
   padding: 0.75rem 1rem;
   transition: all 0.2s ease;
@@ -126,7 +170,7 @@
 
 .input-field:focus {
   outline: none;
-  border-color: #10A87A;
+  border-color: #10a87a;
   box-shadow: 0 0 0 3px rgba(21, 214, 156, 0.2);
 }
 

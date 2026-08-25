@@ -1,25 +1,44 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
-import { showcaseData, ProjectShowcaseItem } from '@/config/site'
-import { Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { showcaseData, ProjectShowcaseItem } from "@/config/site";
+import { Sparkles, ArrowRight, CheckCircle2 } from "lucide-react";
 
-type CategoryFilter = 'All' | 'Web' | 'AI/ML' | 'Data' | 'Video' | 'Design' | 'Content'
+type CategoryFilter =
+  | "All"
+  | "Web"
+  | "AI/ML"
+  | "Data"
+  | "Video"
+  | "Design"
+  | "Content";
 
 export const WorkShowcase: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<CategoryFilter>('All')
+  const [activeCategory, setActiveCategory] = useState<CategoryFilter>("All");
 
-  const categories: CategoryFilter[] = ['All', 'Web', 'AI/ML', 'Data', 'Video', 'Design', 'Content']
+  const categories: CategoryFilter[] = [
+    "All",
+    "Web",
+    "AI/ML",
+    "Data",
+    "Video",
+    "Design",
+    "Content",
+  ];
 
   const filteredProjects =
-    activeCategory === 'All'
+    activeCategory === "All"
       ? showcaseData
-      : showcaseData.filter((item: ProjectShowcaseItem) => item.category === activeCategory)
+      : showcaseData.filter(
+          (item: ProjectShowcaseItem) => item.category === activeCategory,
+        );
 
   return (
-    <section id="showcase" className="py-20 lg:py-28 bg-white border-y border-[#D1FAE5] relative">
+    <section
+      id="showcase"
+      className="py-20 lg:py-28 bg-white border-y border-[#D1FAE5] relative"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="space-y-3 max-w-2xl">
@@ -28,12 +47,14 @@ export const WorkShowcase: React.FC = () => {
               <span>Execution Showcase</span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#052E20] tracking-tight">
+            <h2 className="font-gerbil font-light text-3xl sm:text-5xl text-[#052E20] tracking-tight">
               Sample Outcomes & Capability Demos
             </h2>
 
             <p className="text-base sm:text-lg text-[#527A68]">
-              Explore sample scopes across our key service domains. Every project is engineered for performance, clean architecture, and measurable results.
+              Explore sample scopes across our key service domains. Every
+              project is engineered for performance, clean architecture, and
+              measurable results.
             </p>
           </div>
 
@@ -41,7 +62,9 @@ export const WorkShowcase: React.FC = () => {
             to="/start-project"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0A4F3A] hover:bg-[#0D7A58] text-white text-sm font-bold shadow-sm transition-all whitespace-nowrap active:scale-95 self-start md:self-auto"
           >
-            <span>Have a Similar Project?</span>
+            <span className="font-gerbil font-light">
+              Have a Similar Project?
+            </span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -54,8 +77,8 @@ export const WorkShowcase: React.FC = () => {
               onClick={() => setActiveCategory(category)}
               className={`px-4 py-2 text-xs sm:text-sm font-bold rounded-xl transition-all duration-200 ${
                 activeCategory === category
-                  ? 'bg-[#0A4F3A] text-white shadow-sm'
-                  : 'bg-[#F0FDF8] hover:bg-white text-[#527A68] hover:text-[#052E20] border border-[#D1FAE5]'
+                  ? "bg-[#0A4F3A] text-white shadow-sm"
+                  : "bg-[#F0FDF8] hover:bg-white text-[#527A68] hover:text-[#052E20] border border-[#D1FAE5]"
               }`}
             >
               {category}
@@ -123,10 +146,9 @@ export const WorkShowcase: React.FC = () => {
             ))}
           </AnimatePresence>
         </div>
-
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default WorkShowcase
+export default WorkShowcase;

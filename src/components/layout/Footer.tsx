@@ -1,10 +1,19 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { ArrowRight, Mail, Linkedin, Instagram, Github, Youtube, MessageCircle, Sparkles } from 'lucide-react'
-import { siteConfig } from '@/config/site'
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  Mail,
+  Linkedin,
+  Instagram,
+  Github,
+  Youtube,
+  MessageCircle,
+  Sparkles,
+} from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 export const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-brand-950 text-white border-t border-brand-800/40 relative overflow-hidden">
@@ -20,9 +29,12 @@ export const Footer: React.FC = () => {
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-lime/10 border border-accent-lime/20 text-xs font-bold text-accent-lime uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5" /> Start Building Today
               </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight">Have a project or talent requirement?</h3>
-              <p className="text-sm sm:text-base text-white/70 max-w-xl">
-                Tell us what you need. Our team reviews your requirements and coordinates high-caliber execution.
+              <h3 className="font-gerbil font-light text-2xl sm:text-3xl tracking-tight">
+                Have a project or talent requirement?
+              </h3>
+              <p className="text-sm sm:text-base text-white/70 max-w-xl h-auto">
+                Tell us what you need. Our team reviews your requirements and
+                coordinates high-caliber execution.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3">
@@ -48,7 +60,6 @@ export const Footer: React.FC = () => {
       {/* Main Multi-Column Links Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 lg:gap-10">
-          
           {/* Col 1 & 2: Brand Information */}
           <div className="col-span-2 space-y-4">
             <Link to="/" className="flex items-center gap-2.5">
@@ -57,7 +68,7 @@ export const Footer: React.FC = () => {
                 alt="ProPeak Logo"
                 className="h-10 sm:h-12 w-auto object-contain"
                 onError={(e) => {
-                  (e.target as HTMLElement).style.display = 'none'
+                  (e.target as HTMLElement).style.display = "none";
                 }}
               />
               <span className="text-2xl font-black tracking-tight text-white">
@@ -65,7 +76,9 @@ export const Footer: React.FC = () => {
               </span>
             </Link>
             <p className="text-sm text-white/70 leading-relaxed pr-4">
-              A student-driven digital services company and managed talent network delivering production-grade web apps, AI systems, mobile apps, media, and technical consulting.
+              A student-driven digital services company and managed talent
+              network delivering production-grade web apps, AI systems, mobile
+              apps, media, and technical consulting.
             </p>
             <div className="pt-2">
               <a
@@ -139,17 +152,25 @@ export const Footer: React.FC = () => {
 
           {/* Col 3: Services */}
           <div className="space-y-3">
-            <h4 className="text-sm font-bold tracking-wider uppercase text-brand-400">Services</h4>
+            <h4 className="text-sm font-bold tracking-wider uppercase text-brand-400">
+              Services
+            </h4>
             <ul className="space-y-2 text-sm text-white/70">
               {siteConfig.footerLinks.services.slice(0, 5).map((item) => (
                 <li key={item.name}>
-                  <Link to={item.href} className="hover:text-white transition-colors">
+                  <Link
+                    to={item.href}
+                    className="hover:text-white transition-colors"
+                  >
                     {item.name}
                   </Link>
                 </li>
               ))}
               <li>
-                <Link to="/services" className="text-brand-400 hover:text-white font-semibold flex items-center gap-1 pt-1">
+                <Link
+                  to="/services"
+                  className="text-brand-400 hover:text-white font-semibold flex items-center gap-1 pt-1"
+                >
                   View All (9) &rarr;
                 </Link>
               </li>
@@ -158,16 +179,24 @@ export const Footer: React.FC = () => {
 
           {/* Col 4: For Businesses */}
           <div className="space-y-3">
-            <h4 className="text-sm font-bold tracking-wider uppercase text-brand-400">For Businesses</h4>
+            <h4 className="text-sm font-bold tracking-wider uppercase text-brand-400">
+              For Businesses
+            </h4>
             <ul className="space-y-2 text-sm text-white/70">
               {siteConfig.footerLinks.forBusinesses.map((item) => (
                 <li key={item.name}>
-                  {item.href.startsWith('/#') ? (
-                    <a href={item.href} className="hover:text-white transition-colors">
+                  {item.href.startsWith("/#") ? (
+                    <a
+                      href={item.href}
+                      className="hover:text-white transition-colors"
+                    >
                       {item.name}
                     </a>
                   ) : (
-                    <Link to={item.href} className="hover:text-white transition-colors">
+                    <Link
+                      to={item.href}
+                      className="hover:text-white transition-colors"
+                    >
                       {item.name}
                     </Link>
                   )}
@@ -178,11 +207,16 @@ export const Footer: React.FC = () => {
 
           {/* Col 5: For Students */}
           <div className="space-y-3">
-            <h4 className="text-sm font-bold tracking-wider uppercase text-brand-400">For Students</h4>
+            <h4 className="text-sm font-bold tracking-wider uppercase text-brand-400">
+              For Students
+            </h4>
             <ul className="space-y-2 text-sm text-white/70">
               {siteConfig.footerLinks.forStudents.map((item) => (
                 <li key={item.name}>
-                  <Link to={item.href} className="hover:text-white transition-colors">
+                  <Link
+                    to={item.href}
+                    className="hover:text-white transition-colors"
+                  >
                     {item.name}
                   </Link>
                 </li>
@@ -192,25 +226,32 @@ export const Footer: React.FC = () => {
 
           {/* Col 6: Company & Legal */}
           <div className="space-y-3">
-            <h4 className="text-sm font-bold tracking-wider uppercase text-brand-400">Company</h4>
+            <h4 className="text-sm font-bold tracking-wider uppercase text-brand-400">
+              Company
+            </h4>
             <ul className="space-y-2 text-sm text-white/70">
               {siteConfig.footerLinks.company.map((item) => (
                 <li key={item.name}>
-                  <Link to={item.href} className="hover:text-white transition-colors">
+                  <Link
+                    to={item.href}
+                    className="hover:text-white transition-colors"
+                  >
                     {item.name}
                   </Link>
                 </li>
               ))}
               {siteConfig.footerLinks.legal.map((item) => (
                 <li key={item.name}>
-                  <Link to={item.href} className="hover:text-white transition-colors">
+                  <Link
+                    to={item.href}
+                    className="hover:text-white transition-colors"
+                  >
                     {item.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-
         </div>
       </div>
 
@@ -232,7 +273,7 @@ export const Footer: React.FC = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
