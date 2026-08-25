@@ -1,62 +1,71 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { ArrowRight, Sparkles, CheckCircle2, Code, Cpu, Video, FileText, ChevronRight } from 'lucide-react'
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Sparkles,
+  CheckCircle2,
+  Code,
+  Cpu,
+  Video,
+  FileText,
+  ChevronRight,
+} from "lucide-react";
 
+//  Font Change karna hai Site ka
 export const Hero: React.FC = () => {
   const mockCards = [
     {
-      title: 'Website Development',
-      price: '₹15,000+',
+      title: "Website Development",
+      // price: '₹15,000+',
       icon: Code,
-      category: 'Web App & UI',
-      tags: ['Next.js', 'React', 'Tailwind'],
-      glow: 'from-emerald-500/20 to-teal-500/20',
+      // category: "Web App & UI",
+      tags: ["Next.js", "React", "Tailwind"],
+      glow: "from-emerald-500/20 to-teal-500/20",
     },
     {
-      title: 'AI / ML Solution',
-      price: '₹20,000+',
+      title: "AI / ML Solution",
+      // price: '₹20,000+',
       icon: Cpu,
-      category: 'Intelligent Systems',
-      tags: ['Python', 'LLMs', 'RAG'],
-      glow: 'from-teal-500/20 to-cyan-500/20',
+      category: "Intelligent Systems",
+      tags: ["Python", "LLMs", "RAG"],
+      glow: "from-teal-500/20 to-cyan-500/20",
     },
     {
-      title: 'Video Editing',
-      price: '₹5,000+',
+      title: "Video Editing",
+      // price: '₹5,000+',
       icon: Video,
-      category: 'Media Production',
-      tags: ['Motion', 'Reels', 'YouTube'],
-      glow: 'from-emerald-600/20 to-green-400/20',
+      // category: "Media Production",
+      tags: ["Motion", "Reels", "YouTube"],
+      glow: "from-emerald-600/20 to-green-400/20",
     },
     {
-      title: 'Content Writing',
-      price: '₹3,000+',
+      title: "Content Writing",
+      // price: '₹3,000+',
       icon: FileText,
-      category: 'SEO & Copywriting',
-      tags: ['SEO Blogs', 'Technical Docs'],
-      glow: 'from-green-500/20 to-lime-500/20',
+      // category: "SEO & Copywriting",
+      tags: ["SEO Blogs", "Technical Docs"],
+      glow: "from-green-500/20 to-lime-500/20",
     },
-  ]
+  ];
 
   return (
     <section className="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 bg-[#F0FDF8]">
       {/* Background Animated Gradient Blobs */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-[#15D69C]/15 via-[#7FFFD4]/20 to-[#0D7A58]/10 rounded-full blur-[120px] pointer-events-none -z-10" />
       <div className="absolute top-40 right-10 w-96 h-96 bg-[#84CC16]/10 rounded-full blur-[100px] pointer-events-none -z-10" />
-      
+
       {/* Subtle Background Grid */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.035] pointer-events-none -z-10"
         style={{
           backgroundImage: `radial-gradient(#0A4F3A 1px, transparent 1px)`,
-          backgroundSize: '24px 24px'
+          backgroundSize: "24px 24px",
         }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
           {/* Left Column: Headline, Copy & CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -72,14 +81,18 @@ export const Hero: React.FC = () => {
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#052E20] tracking-tight leading-[1.1]">
-              Build Skills.<br />
-              <span className="text-grad-bright">Earn Money.</span><br />
+              Build Skills.
+              <br />
+              <span className="text-grad-bright">Earn Money.</span>
+              <br />
               Create Impact.
             </h1>
 
             {/* Supporting Subheadline */}
             <p className="text-lg sm:text-xl text-[#527A68] leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
-              Digital solutions built by ambitious talent, managed by a team that cares about the outcome. From high-performance websites and AI pipelines to video editing and technical content.
+              Digital solutions built by ambitious talent, managed by a team
+              that cares about the outcome. From high-performance websites and
+              AI pipelines to video editing and technical content.
             </p>
 
             {/* Action Buttons */}
@@ -128,7 +141,7 @@ export const Hero: React.FC = () => {
             {/* Card Grid Preview */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
               {mockCards.map((card, idx) => {
-                const Icon = card.icon
+                const Icon = card.icon;
                 return (
                   <motion.div
                     key={card.title}
@@ -143,36 +156,37 @@ export const Hero: React.FC = () => {
                         <div className="w-10 h-10 rounded-xl bg-[#F0FDF8] border border-[#D1FAE5] flex items-center justify-center text-[#0D7A58]">
                           <Icon className="w-5 h-5 stroke-[2]" />
                         </div>
-                        <span className="text-xs font-bold text-[#166534] bg-[#F7FEE7] px-2.5 py-1 rounded-full border border-[#D1FAE5]">
+                        {/* <span className="text-xs font-bold text-[#166534] bg-[#F7FEE7] px-2.5 py-1 rounded-full border border-[#D1FAE5]">
                           {card.price}
-                        </span>
+                        </span> */}
                       </div>
-                      <p className="text-xs font-bold uppercase tracking-wider text-[#527A68]/80 mb-1">{card.category}</p>
-                      <h4 className="text-base font-bold text-[#052E20] leading-snug">{card.title}</h4>
+                      <p className="text-xs font-bold uppercase tracking-wider text-[#527A68]/80 mb-1">
+                        {card.category}
+                      </p>
+                      <h4 className="text-base font-bold text-[#052E20] leading-snug">
+                        {card.title}
+                      </h4>
                     </div>
 
                     <div className="flex flex-wrap gap-1.5 mt-4 pt-3 border-t border-[#D1FAE5]/60">
                       {card.tags.map((tag) => (
-                        <span key={tag} className="text-[11px] font-semibold text-[#0D7A58] bg-[#F0FDF8] px-2 py-0.5 rounded-md border border-[#D1FAE5]">
+                        <span
+                          key={tag}
+                          className="text-[11px] font-semibold text-[#0D7A58] bg-[#F0FDF8] px-2 py-0.5 rounded-md border border-[#D1FAE5]"
+                        >
                           {tag}
                         </span>
                       ))}
                     </div>
                   </motion.div>
-                )
+                );
               })}
             </div>
-
-            {/* Note banner under cards */}
-            <p className="text-center text-xs text-[#527A68] mt-4 italic">
-              *Visual examples of typical project domains & starting scopes.
-            </p>
           </motion.div>
-
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
