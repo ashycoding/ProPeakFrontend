@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import SeoHead from '@/components/ui/SeoHead'
-import { ArrowRight, Home, Compass, Sparkles } from 'lucide-react'
+import React from "react";
+import { Link } from "react-router-dom";
+import SeoHead from "@/components/ui/SeoHead";
+import { ArrowRight, Home, Compass, Sparkles } from "lucide-react";
 
 export const NotFoundPage: React.FC = () => {
   return (
@@ -12,20 +12,21 @@ export const NotFoundPage: React.FC = () => {
         canonicalPath="/404"
       />
 
-      <div className="min-h-[80vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 bg-[#F0FDF8]">
+      <div className="min-h-[90vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 bg-[#F0FDF8]">
         <div className="max-w-md w-full text-center space-y-6">
-          
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#D1FAE5] shadow-xs text-xs font-bold text-[#0D7A58] uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5 text-[#10A87A]" />
-            <span>Error 404</span>
+            <span className="font-gerbil font-light ">Error 404</span>
           </div>
 
-          <h1 className="text-7xl sm:text-8xl font-black text-[#0A4F3A] tracking-tight font-mono">
+          <h1 className="text-7xl sm:text-8xl text-[#0A4F3A] tracking-tight font-gerbil font-light ">
             404
           </h1>
 
           <div className="space-y-2">
-            <h2 className="text-2xl font-bold text-[#052E20]">Page Not Found</h2>
+            <h2 className="text-3xl font-gerbil font-light text-[#052E20]">
+              Page Not Found
+            </h2>
             <p className="text-sm text-[#527A68]">
               The page you're looking for doesn't exist or may have been moved.
             </p>
@@ -48,11 +49,10 @@ export const NotFoundPage: React.FC = () => {
               <span>Explore Services</span>
             </Link>
           </div>
-
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;

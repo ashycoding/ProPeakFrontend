@@ -156,9 +156,6 @@ export const Hero: React.FC = () => {
                         <div className="w-10 h-10 rounded-xl bg-[#F0FDF8] border border-[#D1FAE5] flex items-center justify-center text-[#0D7A58]">
                           <Icon className="w-5 h-5 stroke-[2]" />
                         </div>
-                        {/* <span className="text-xs font-bold text-[#166534] bg-[#F7FEE7] px-2.5 py-1 rounded-full border border-[#D1FAE5]">
-                          {card.price}
-                        </span> */}
                       </div>
                       <p className="text-xs font-bold uppercase tracking-wider text-[#527A68]/80 mb-1">
                         {card.category}
