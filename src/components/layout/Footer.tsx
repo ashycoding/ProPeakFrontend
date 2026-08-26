@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   ArrowRight,
   Mail,
@@ -14,6 +14,18 @@ import { siteConfig } from "@/config/site";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const { pathname } = useLocation();
+  const isNotFoundPage =
+    pathname !== "/" &&
+    ![
+      "/services",
+      "/about",
+      "/contact",
+      "/start-project",
+      "/privacy",
+      "/terms",
+    ].includes(pathname) &&
+    !pathname.startsWith("/services/");
 
   return (
     <footer className="bg-brand-950 text-white border-t border-brand-800/40 relative overflow-hidden">
@@ -21,41 +33,45 @@ export const Footer: React.FC = () => {
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-600/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-80 h-80 bg-accent-teal/10 rounded-full blur-[100px] pointer-events-none" />
 
-      {/* Top Banner / Callout within Footer */}
-      <div className="border-b border-brand-800/40 py-12 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md">
-            <div className="space-y-2 text-center md:text-left">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-lime/10 border border-accent-lime/20 text-xs font-bold text-accent-lime uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5" /> Start Building Today
+      {pathname !== "/" &&
+        pathname !== "/services" &&
+        !pathname.startsWith("/services/") &&
+        !isNotFoundPage && (
+          <div className="border-b border-brand-800/40 py-12 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md">
+                <div className="space-y-2 text-center md:text-left">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-lime/10 border border-accent-lime/20 text-xs font-bold text-accent-lime uppercase tracking-wider">
+                    <Sparkles className="w-3.5 h-3.5" /> Start Building Today
+                  </div>
+                  <h3 className="font-gerbil font-light text-2xl sm:text-3xl tracking-tight">
+                    Have a project or talent requirement?
+                  </h3>
+                  <p className="text-sm sm:text-base text-white/70 max-w-xl h-auto">
+                    Tell us what you need. Our team reviews your requirements
+                    and coordinates high-caliber execution.
+                  </p>
+                </div>
+                <div className="flex flex-wrap items-center gap-3">
+                  <Link
+                    to="/start-project"
+                    className="px-6 py-3 text-sm sm:text-base font-bold rounded-xl bg-accent-lime text-brand-950 hover:bg-accent-lime/90 transition-all shadow-lg active:scale-95 flex items-center gap-2 group"
+                  >
+                    <span>Start a Project</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <a
+                    href={`mailto:${siteConfig.email}`}
+                    className="px-5 py-3 text-sm sm:text-base font-semibold rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white transition-all flex items-center gap-2"
+                  >
+                    <Mail className="w-4 h-4 text-brand-400" />
+                    <span>Email Us</span>
+                  </a>
+                </div>
               </div>
-              <h3 className="font-gerbil font-light text-2xl sm:text-3xl tracking-tight">
-                Have a project or talent requirement?
-              </h3>
-              <p className="text-sm sm:text-base text-white/70 max-w-xl h-auto">
-                Tell us what you need. Our team reviews your requirements and
-                coordinates high-caliber execution.
-              </p>
-            </div>
-            <div className="flex flex-wrap items-center gap-3">
-              <Link
-                to="/start-project"
-                className="px-6 py-3 text-sm sm:text-base font-bold rounded-xl bg-accent-lime text-brand-950 hover:bg-accent-lime/90 transition-all shadow-lg active:scale-95 flex items-center gap-2 group"
-              >
-                <span>Start a Project</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="px-5 py-3 text-sm sm:text-base font-semibold rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white transition-all flex items-center gap-2"
-              >
-                <Mail className="w-4 h-4 text-brand-400" />
-                <span>Email Us</span>
-              </a>
             </div>
           </div>
-        </div>
-      </div>
+        )}
 
       {/* Main Multi-Column Links Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
@@ -80,13 +96,25 @@ export const Footer: React.FC = () => {
               network delivering production-grade web apps, AI systems, mobile
               apps, media, and technical consulting.
             </p>
-            <div className="pt-2">
+            <div>
               <a
                 href={`mailto:${siteConfig.email}`}
                 className="inline-flex items-center gap-2 text-sm font-semibold text-brand-400 hover:text-brand-200 transition-colors"
               >
                 <Mail className="w-4 h-4" />
                 <span>{siteConfig.email}</span>
+              </a>
+            </div>
+            <div>
+              <a
+                href={`https://wa.me/91${siteConfig.phone}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`WhatsApp us at ${siteConfig.phone}`}
+                className="mt-1 inline-flex items-center gap-2 text-sm font-semibold text-brand-400 hover:text-brand-200 transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>WhatsApp: {siteConfig.phone}</span>
               </a>
             </div>
 

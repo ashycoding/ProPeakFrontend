@@ -72,15 +72,11 @@ export const ServicesSection: React.FC = () => {
                       <Icon className="w-6 h-6 stroke-[2]" />
                     </div>
 
-                    {service.popular ? (
+                    {service.popular && (
                       <span className="text-[11px] font-bold text-[#166534] bg-[#F7FEE7] px-2.5 py-1 rounded-full border border-[#D1FAE5]">
                         Popular
                       </span>
-                    ) : service.sampleStartingBudget ? (
-                      <span className="text-[11px] font-semibold text-[#527A68] bg-[#F0FDF8] px-2.5 py-1 rounded-full border border-[#D1FAE5]">
-                        From {service.sampleStartingBudget}
-                      </span>
-                    ) : null}
+                    )}
                   </div>
 
                   <h3 className="text-xl font-bold text-[#052E20] group-hover:text-[#0D7A58] transition-colors mb-2.5">
