@@ -16,6 +16,7 @@ import StartProjectPage from '@/pages/StartProjectPage'
 import PrivacyPage from '@/pages/PrivacyPage'
 import TermsPage from '@/pages/TermsPage'
 import NotFoundPage from '@/pages/NotFoundPage'
+import TestStatusPage from '@/pages/TestStatusPage'
 
 export const App: React.FC = () => {
   return (
@@ -35,6 +36,9 @@ export const App: React.FC = () => {
             <Route path="/start-project" element={<StartProjectPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />
+            <Route path="/test" element={<TestStatusPage />} />
+            <Route path="/test-status" element={<TestStatusPage />} />
+            <Route path="/diagnostics" element={<TestStatusPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

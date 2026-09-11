@@ -1,0 +1,17 @@
+{
+  "status": "online",
+  "service": "ProPeak Frontend App",
+  "version": "1.0.1",
+  "deployedAt": "2026-09-11T11:30:00Z",
+  "configuredEmail": "propeakofficial@gmail.com",
+  "siteUrl": "https://propeak.in",
+  "intakeFormUrl": "https://forms.gle/oTRxffbuEJQiLFee6",
+  "socialLinks": {
+    "instagram": "https://www.instagram.com/propeakofficial/",
+    "linkedin": "https://www.linkedin.com/company/propeak-in/"
+  },
+  "deploymentCheck": {
+    "emailReflected": true,
+    "instructions": "If you see propeakofficial@gmail.com here on your Netlify URL (/api/test.json), your build deployment has successfully published the latest updates."
+  }
+}
