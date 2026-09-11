@@ -47,7 +47,7 @@ export const siteConfig = {
   heroSupporting:
     "Digital solutions built by ambitious talent, managed by a team that cares about the outcome.",
   url: import.meta.env.VITE_SITE_URL || "https://propeak.in",
-  email: import.meta.env.VITE_CONTACT_EMAIL || "propeakofficial@gmail.com",
+  email: "propeakofficial@gmail.com",
   phone: import.meta.env.VITE_CONTACT_PHONE || "7023719415",
   googleFormUrl:
     import.meta.env.VITE_GOOGLE_PROJECT_FORM_URL ||
