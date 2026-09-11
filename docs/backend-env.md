@@ -62,7 +62,7 @@ STRIPE_WEBHOOK_SECRET=whsec_xxxxxxxxxxxx
 # SMTP / Transactional Email (Resend / AWS SES)
 RESEND_API_KEY=re_xxxxxxxxxxxx
 SYSTEM_NOTIFICATION_EMAIL=notifications@propeak.in
-SUPPORT_EMAIL=contact@propeak.in
+SUPPORT_EMAIL=propeakofficial@gmail.com
 ```
 
 ---

@@ -23,7 +23,7 @@ This developer guide documents the REST API endpoints and WebSocket event archit
   ```json
   {
     "name": "Ashok Kumar",
-    "email": "ashok@propeak.dev",
+    "email": "propeakofficial@gmail.com",
     "password": "securepassword123",
     "role": "EMPLOYEE"
   }
@@ -34,7 +34,7 @@ This developer guide documents the REST API endpoints and WebSocket event archit
     "user": {
       "id": "usr-employee-1",
       "name": "Ashok Kumar",
-      "email": "ashok@propeak.dev",
+      "email": "propeakofficial@gmail.com",
       "role": "EMPLOYEE",
       "headline": "Silver Talent",
       "skills": []
@@ -48,7 +48,7 @@ This developer guide documents the REST API endpoints and WebSocket event archit
 - **Request Body**:
   ```json
   {
-    "email": "ashok@propeak.dev",
+    "email": "propeakofficial@gmail.com",
     "password": "securepassword123",
     "role": "EMPLOYEE"
   }
@@ -59,7 +59,7 @@ This developer guide documents the REST API endpoints and WebSocket event archit
     "user": {
       "id": "usr-employee-1",
       "name": "Ashok Kumar",
-      "email": "ashok@propeak.dev",
+      "email": "propeakofficial@gmail.com",
       "role": "EMPLOYEE",
       "headline": "Gold Level Developer"
     },
@@ -72,14 +72,14 @@ This developer guide documents the REST API endpoints and WebSocket event archit
 - **Request Body**:
   ```json
   {
-    "email": "ashok@propeak.dev"
+    "email": "propeakofficial@gmail.com"
   }
   ```
 - **Success Response (200 OK)**:
   ```json
   {
     "success": true,
-    "message": "Verification recovery link successfully dispatched to ashok@propeak.dev"
+    "message": "Verification recovery link successfully dispatched to propeakofficial@gmail.com"
   }
   ```
 

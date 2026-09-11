@@ -71,9 +71,9 @@ cp .env.example .env
 | :--- | :--- | :--- |
 | `VITE_SITE_URL` | Canonical domain for SEO & OpenGraph | `https://propeak.in` |
 | `VITE_GOOGLE_PROJECT_FORM_URL` | Google Form URL for project requirement submissions | `""` (Falls back to email intake) |
-| `VITE_CONTACT_EMAIL` | Primary contact email address | `contact@propeak.in` |
+| `VITE_CONTACT_EMAIL` | Primary contact email address | `propeakofficial@gmail.com` |
 | `VITE_LINKEDIN_URL` | LinkedIn company or profile URL | `https://www.linkedin.com/company/propeak-in/` |
-| `VITE_INSTAGRAM_URL` | Instagram page URL | `""` |
+| `VITE_INSTAGRAM_URL` | Instagram page URL | `https://www.instagram.com/propeakofficial/` |
 | `VITE_GITHUB_URL` | GitHub organization URL | `""` |
 | `VITE_YOUTUBE_URL` | YouTube channel URL | `""` |
 | `VITE_WHATSAPP_URL` | WhatsApp direct contact link | `""` |
